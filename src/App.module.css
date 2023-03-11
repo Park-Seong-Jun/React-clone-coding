@@ -1,8 +1,17 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: brown;
+}
 .title {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 30px;
     font-weight: 800;
-    color: brown;
+    
+}
+.headerInfo {
+    font-size: 15px;
 }
 .flex_container {
     display: flex;
@@ -14,4 +23,34 @@
 .row_sorting_side {
     display: flex;
     justify-content: space-between;
+}
+
+.screen {
+    background-color: black;
+    padding: 30px 30px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.content {
+
+    display: flex;
+    width: inherit;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: space-evenly ;
+}
+
+.moviePoster {
+    height: 300px;
+    width: 200px;
+    margin: 20px 10px 0 10px;
+}
+.movieDetail {
+    display: flex;
+    
+    border: 1px solid white;
+    color: white;
 }

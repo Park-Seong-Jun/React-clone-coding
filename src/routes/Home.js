@@ -1,5 +1,6 @@
 import Movie from "../component/movieInfo";
 import styles from "../App.module.css";
+
 import { useState, useEffect } from "react";
 
 function Home() {
@@ -23,18 +24,24 @@ function Home() {
     },[]);
     
     return (
-      <div>
-        {loading ? <h1 className={styles.title}>The Movie Tracker</h1> :<h1 className={styles.title}>The Movie Tracker({movies.length})</h1>}
-        {loading ? <strong>Loading..</strong> : null }
+      <div className={styles.screen}>
+        <header className={styles.header}>
+          <h1 className={styles.title}>Find your life-time movie!</h1>
+          {loading ?  <span className={styles.headerInfo}><br/>Loading..</span>:<span className={styles.headerInfo}><br/>Number of movies searched : {movies.length}</span>}
+          
+        </header>
         
-        {movies.map((movie)=>
-          <Movie
-          key={movie.key}
-          coverIMG={movie.medium_cover_image}
-          title ={movie.title}
-          year = {movie.year}
-          summary = {movie.summary}
-          genres = {movie.genres}/>)}
+        <main className={styles.content}>
+          {movies.map((movie)=>
+            <Movie
+            key={movie.key}
+            coverIMG={movie.medium_cover_image}
+            title ={movie.title}
+            year = {movie.year}
+            summary = {movie.summary}
+            genres = {movie.genres}/>)}
+        </main>
+        
             
   
     
