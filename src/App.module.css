@@ -1,4 +1,5 @@
 .header {
+    height: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,11 +47,49 @@
 .moviePoster {
     height: 300px;
     width: 200px;
-    margin: 20px 10px 0 10px;
+    border-radius: 20px;
+
 }
-.movieDetail {
+.movieInfo {
+    height: 300px;
+    width: 200px;
+    margin: 20px 10px 0 10px;
     display: flex;
-    
+    position: relative;
     border: 1px solid white;
     color: white;
+    
+}
+.movieDetail {
+    color: white;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    background-color: beige;
+    z-index: 1;
+    padding: 20px;
+    width: 500px;
+
+}
+.movieDetailIMG{
+    height: 500px;
+    width: 300px;
+    margin-right: 20px;
+
+}
+.movieDetailInfo {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     align-content:space-around ;
+     color: black;
+}
+.movieDetailInfo__title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+.movieDetailInfo__genre {
+    font-weight: 600;
+    margin: 20px 0;
 }

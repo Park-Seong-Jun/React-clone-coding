@@ -7,13 +7,12 @@ function Movie({coverIMG, title, year, summary, genres}) {
   
     function mouseActivation(){
         setDetailActivation((curent)=>!curent)
-
     }
     
     return (
-    <div className={styles.movieDetail}  onMouseOver={mouseActivation} onMouseOut={mouseActivation}>
-        <img className={styles.moviePoster}src={coverIMG} alt="" />
-        <div>{detailActivation ?  ShowMovieDetail({title, year, summary, genres}): null}</div>
+    <div className={styles.movieInfo}   >
+        
+        {detailActivation ?  ShowMovieDetail({coverIMG, title, year, summary, genres, mouseActivation}): <img className={styles.moviePoster}src={coverIMG} alt="" onMouseOver={mouseActivation}/>}
         
 
     </div>
@@ -21,16 +20,20 @@ function Movie({coverIMG, title, year, summary, genres}) {
     )
 }
 
-function ShowMovieDetail({title, year, summary, genres}){
+function ShowMovieDetail({coverIMG, title, year, summary, genres, mouseActivation}){
    
     return(
-        <div>
-            <h3>{title}({year})</h3>
-            {summary.length > 255 ? summary.slice(0, 255)+"...": summary }
+        <div className={styles.movieDetail} onMouseOut={mouseActivation}>
+            <img className={styles.movieDetailIMG} src={coverIMG} alt="" />
+            <div className={styles.movieDetailInfo}>
+                <h3 className={styles.movieDetailInfo__title}>{title}({year})</h3>
+                {summary.length > 255 ? summary.slice(0, 255)+"...": summary }
+                <h4 className={styles.movieDetailInfo__genre}>genre</h4>
+                <ul>
+                    {genres.map((genre) => <li key={genre}>{genre}</li>)}
+                </ul>
+            </div>
             
-            <ul>
-                {genres.map((genre) => <li key={genre}>{genre}</li>)}
-            </ul>
         </div>
     )
     
